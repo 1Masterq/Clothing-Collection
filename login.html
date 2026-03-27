@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - BLUNTZ</title>
+<style>
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LOGIN BACKGROUND */
+.login-bg{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.login-bg::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+opacity:0.5;
+}
+
+/* TITLE */
+.login-bg h1{
+margin-bottom:30px;
+font-size:3em;
+text-shadow:2px 2px 4px rgba(0,0,0,0.3);
+background:linear-gradient(45deg, #fff, #f0f0f0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+z-index:2;
+position:relative;
+}
+
+/* AUTH BOX */
+.auth-box{
+background:rgba(255,255,255,0.95);
+color:black;
+padding:40px;
+border-radius:20px;
+width:400px;
+max-width:90%;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
+z-index:2;
+position:relative;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.auth-box h2{
+margin-bottom:30px;
+color:#333;
+font-size:2em;
+font-weight:600;
+}
+
+/* INPUTS */
+.auth-box input{
+width:100%;
+padding:15px;
+margin:15px 0;
+border:2px solid #e1e1e1;
+border-radius:10px;
+font-size:16px;
+transition:border-color 0.3s, box-shadow 0.3s;
+background:#f8f9fa;
+}
+
+.auth-box input:focus{
+outline:none;
+border-color:#667eea;
+box-shadow:0 0 0 3px rgba(102,126,234,0.1);
+}
+
+/* BUTTON */
+.auth-box button{
+width:100%;
+padding:15px;
+border:none;
+background:linear-gradient(45deg, #667eea, #764ba2);
+color:white;
+font-size:18px;
+font-weight:600;
+border-radius:10px;
+cursor:pointer;
+transition:background 0.3s, transform 0.2s, box-shadow 0.2s;
+margin-top:20px;
+}
+
+.auth-box button:hover{
+background:linear-gradient(45deg, #5a6fd8, #6a4190);
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(102,126,234,0.3);
+}
+
+.auth-box button:active{
+transform:translateY(0);
+}
+
+/* LINKS */
+.auth-box p{
+margin-top:20px;
+font-size:14px;
+color:#666;
+}
+
+.auth-box a{
+color:#667eea;
+text-decoration:none;
+font-weight:500;
+transition:color 0.3s;
+}
+
+.auth-box a:hover{
+color:#764ba2;
+text-decoration:underline;
+}
+
+/* FOOTER */
+footer{
+background:linear-gradient(45deg, #111, #333);
+color:white;
+text-align:center;
+padding:20px;
+width:100%;
+position:absolute;
+bottom:0;
+z-index:2;
+}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+.auth-box{
+width:90%;
+padding:30px 20px;
+}
+
+.login-bg h1{
+font-size:2.5em;
+}
+}
+</style>
+</head>
+
+<body class="login-bg">
+
+<h1>Welcome to BLUNTZ</h1>
+
+<div class="auth-box">
+
+<h2>Welcome Back</h2>
+
+<input id="loginEmail" type="email" placeholder="Email Address" required>
+
+<input type="password" id="loginPassword" placeholder="Password" required>
+
+<button onclick="login()">Sign In</button>
+
+<p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+
+</div>
+ <!-- FOOTER -->
+ <footer>
+    <p>&copy; 2026 BLUNTZ Collection. All rights reserved.</p>
+  </footer>
+<script>
+function login(){
+let email = document.getElementById("loginEmail").value.trim();
+let password = document.getElementById("loginPassword").value;
+
+let savedEmail = localStorage.getItem("userEmail");
+let savedPassword = localStorage.getItem("userPassword");
+
+// Check if any account exists
+if(!savedEmail || !savedPassword){
+alert("No account found. Please sign up first.");
+window.location.href = "signup.html";
+return;
+}
+
+// Basic validation
+if(email === "" || password === ""){
+alert("Please fill in all fields");
+return;
+}
+
+// Check if email is valid
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!emailRegex.test(email)){
+alert("Please enter a valid email address");
+return;
+}
+
+// Check credentials
+if(email === savedEmail && password === savedPassword){
+
+// Success feedback
+const button = document.querySelector('.auth-box button');
+const originalText = button.textContent;
+button.textContent = "✓ Signing In...";
+button.style.background = "linear-gradient(45deg, #28a745, #20c997)";
+
+setTimeout(() => {
+alert("Login successful! Welcome back!");
+/* redirect to home page */
+window.location.href = "index.html";
+}, 1000);
+
+}else{
+alert("Incorrect email or password. Please try again.");
+// Clear password field for security
+document.getElementById("loginPassword").value = "";
+document.getElementById("loginPassword").focus();
+}
+}
+</script>
+
+</body>
+</html>

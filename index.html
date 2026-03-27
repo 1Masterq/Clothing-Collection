@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BLUNTZ Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navigation section-->
+<div class="nav">
+  <div class="brand">
+    <img src="./Img/img.jpeg" alt="BLUNTZ Logo" class="nav-logo">
+    <div class="logo">BLUNTZ Collection</div>
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+
+  <ul id="navMenu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="shopping.html">Shop</a></li>
+    <li><a href="cart.html" id="cart-link">🛒 Cart <span id="cart-count">0</span></a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <h1>BLUNTZ Collection delivers bold, modern streetwear designed for comfort and confidence.</h1>
+      <p>Wear your attitude, define your style, and stand out effortlessly. 🔥</p>
+      <a href="shopping.html" class="cta-btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      BLUNTZ Collection is all about confidence, comfort, and clean style. 
+      <span class="more-text" id="moreText">
+        The brand blends modern streetwear with premium quality, creating pieces that feel as good as they look. From bold hoodies to classic T-shirts, every BLUNTZ design is made to stand out without trying too hard.
+         It’s not just clothing — it’s a lifestyle for people who move with purpose and express themselves through style. 🔥👕
+      </span>
+    </p>
+    <button class="read-btn" id="readBtn">Read More</button>
+  </section>
+
+ <!-- SHOP -->
+<section id="shop">
+  <h2>SHOP</h2>
+
+  <!-- MEN -->
+  <h3 class="shop-title">Men</h3>
+  <div class="slider-container">
+    <button class="slide-btn prev" onclick="slideShop('men', -1)">❮</button>
+
+    <div class="slider-track" id="menSlider">
+      <div class="slide">
+        <a href="men.html">
+          <img src="./IMG/img 1.jpeg" alt="Men Hoodie">
+          <p>Men Hoodie</p>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="men.html">
+          <img src="./IMG/img 2.jpeg" alt="Men T-Shirt">
+          <p>Men T-Shirt</p>
+        </a>
+      </div>
+    </div>
+
+    <button class="slide-btn next" onclick="slideShop('men', 1)">❯</button>
+  </div>
+
+  <!-- WOMEN -->
+  <h3 class="shop-title">Women</h3>
+  <div class="slider-container">
+    <button class="slide-btn prev" onclick="slideShop('women', -1)">❮</button>
+
+    <div class="slider-track" id="womenSlider">
+      <div class="slide">
+        <a href="women.html">
+          <img src="./IMG/img 3.jpeg" alt="Women Hoodie">
+          <p>Women Hoodie</p>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="women.html">
+          <img src="./Img/img 4.jpeg" alt="Women T-Shirt">
+          <p>Women T-Shirt</p>
+        </a>
+      </div>
+    </div>
+
+    <button class="slide-btn next" onclick="slideShop('women', 1)">❯</button>
+  </div>
+
+  <!-- CHILDREN -->
+  <h3 class="shop-title">Children</h3>
+  <div class="slider-container">
+    <button class="slide-btn prev" onclick="slideShop('kids', -1)">❮</button>
+
+    <div class="slider-track" id="kidsSlider">
+      <div class="slide">
+        <a href="shopping.html">
+          <img src="./IMG/img 5.jpeg" alt="Kids Hoodie">
+          <p>Kids Hoodie</p>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="shopping.html">
+          <img src="./IMG/img 6.jpeg" alt="Kids T-Shirt">
+          <p>Kids T-Shirt</p>
+        </a>
+      </div>
+    </div>
+
+    <button class="slide-btn next" onclick="slideShop('kids', 1)">❯</button>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+      <a href="#" class="back-to-top">Back to top</a>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 BLUNTZ Collection. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
