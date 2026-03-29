@@ -6,14 +6,14 @@
 }
 
 body {
-  background: linear-gradient(135deg, #222 0%, #111 100%);
-  color: FBFEF9;
+  background: #fbfef9;
+  color: #111;
   line-height: 1.6;
 }
 
 /* ===== NAVBAR ===== */
 .nav {
-  background:FBFEF9;
+  background: linear-gradient(45deg, #000, #333);
   color: #fff;
   padding: 15px 20px;
   position: fixed;
@@ -114,13 +114,12 @@ body {
 }
 
 .hero-content {
-  background: rgba(0,0,0,0.9);
+  background: #2E3532;
   padding: 40px;
   border-radius: 15px;
   color: #fff;
   max-width: 700px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   z-index: 2;
   position: relative;
 }
@@ -135,27 +134,27 @@ body {
 .hero-content p {
   font-size: 18px;
   line-height: 1.6;
-  color: #ccc;
+  color: #fff;
   margin-bottom: 30px;
 }
 
 .cta-btn {
   display: inline-block;
   padding: 15px 30px;
-  background: linear-gradient(45deg, #28a745, #20c997);
+  background: linear-gradient(45deg, #FE5F00, #e67e22);
   color: #fff;
   text-decoration: none;
   border-radius: 25px;
   font-size: 18px;
   font-weight: 600;
   transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+  box-shadow: 0 4px 15px rgba(254,95,0,0.3);
 }
 
 .cta-btn:hover {
-  background: linear-gradient(45deg, #20c997, #17a2b8);
+  background: linear-gradient(45deg, #e67e22, #FE5F00);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(40,167,69,0.4);
+  box-shadow: 0 6px 20px rgba(254,95,0,0.4);
 }
 
 /* ===== SECTIONS ===== */
@@ -179,7 +178,7 @@ section h2::after {
   display: block;
   width: 60px;
   height: 3px;
-  background: linear-gradient(45deg, #28a745, #20c997);
+  background: linear-gradient(45deg, #FE5F00, #e67e22);
   margin: 10px auto;
   border-radius: 2px;
 }
@@ -189,9 +188,17 @@ section h2::after {
   text-align: center;
   line-height: 1.8;
   font-size: 18px;
-  color: #ccc;
+  color: #333;
   max-width: 800px;
   margin: 0 auto 30px;
+}
+
+.about h2 {
+  color: #111;
+}
+
+.contact h2 {
+  color: #111;
 }
 
 .more-text {
@@ -202,7 +209,7 @@ section h2::after {
   display: block;
   margin: 20px auto;
   padding: 12px 30px;
-  background: linear-gradient(45deg, #28a745, #20c997);
+  background: linear-gradient(45deg, #FE5F00, #e67e22);
   border: none;
   color: #fff;
   cursor: pointer;
@@ -213,16 +220,16 @@ section h2::after {
 }
 
 .read-btn:hover {
-  background: linear-gradient(45deg, #20c997, #17a2b8);
+  background: linear-gradient(45deg, #e67e22, #FE5F00);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(40,167,69,0.3);
+  box-shadow: 0 6px 15px rgba(254,95,0,0.3);
 }
 
 /* ===== SHOP ===== */
 #shop {
   padding: 80px 20px;
   text-align: center;
-  background: rgba(0,0,0,0.8);
+  background: #2E3532;
   border-radius: 20px;
   margin: 40px auto;
   max-width: 1200px;
@@ -305,7 +312,7 @@ section h2::after {
 .contact form {
   max-width: 500px;
   margin: auto;
-  background: #222;
+  background: #2E3532;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -333,7 +340,7 @@ section h2::after {
 .contact button {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(45deg, #28a745, #20c997);
+  background: linear-gradient(45deg, #FE5F00, #e67e22);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -344,7 +351,7 @@ section h2::after {
 }
 
 .contact button:hover {
-  background: linear-gradient(45deg, #20c997, #17a2b8);
+  background: linear-gradient(45deg, #e67e22, #FE5F00);
   transform: translateY(-2px);
 }
 
